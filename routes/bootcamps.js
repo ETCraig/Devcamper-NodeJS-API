@@ -8,6 +8,9 @@ const {
     deleteBootcamp,
     getBootcampsInRadius
 } = require('../controllers/bootcamps');
+const courseRouter = require('./courses');
+
+Router.use('/:bootcampId/courses', courseRouter);
 
 Router.route('/')
     .get(getBootcamps)
